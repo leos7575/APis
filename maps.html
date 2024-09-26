@@ -1,34 +1,24 @@
-<html>
-  <head>
-    <title>Api maps</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./maps.js"></script>
+  <style>
+    #map {
+      height: 500px;  /* Altura del mapa */
+      width: 100%;     /* Ancho del mapa */
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0LffCcy9Oak-h5Er-RwDlMNYCZxN9kL4&loading=async&callback=initMap">
+  </script>
+  <div id="map">
 
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script type="module" src="./index.js"></script>
-  </head>
-  <body>
-    <gmp-map
-      center="43.4142989,-124.2301242"
-      zoom="4"
-      map-id="DEMO_MAP_ID"
-      style="height: 400px"
-    >
-      <gmp-advanced-marker
-        position="37.4220656,-122.0840897"
-        title="Mountain View, CA"
-      ></gmp-advanced-marker>
-    </gmp-map>
+  </div>
+</body>
 
-    <!-- 
-      The `defer` attribute causes the callback to execute after the full HTML
-      document has been parsed. For non-blocking uses, avoiding race conditions,
-      and consistent behavior across browsers, consider loading using Promises.
-      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-      for more information.
-      -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0LffCcy9Oak-h5Er-RwDlMNYCZxN9kL4&callback=initMap&libraries=marker&v=beta"
-      defer
-    ></script>
-  </body>
 </html>
