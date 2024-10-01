@@ -3,22 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./maps.js"></script>
+  <script src="./maps.js" defer></script> <!-- Cargar el JavaScript después del HTML -->
   <style>
     #map {
       height: 500px;  /* Altura del mapa */
-      width: 100%;     /* Ancho del mapa */
+      width: 100%;    /* Ancho del mapa */
+    }
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;                
+}
+
+    .search-box {
+      width: 100%;
+      max-width: 400px;  
+      padding: 10px;
+      font-size: 16px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      margin: 10px;
+      padding: 5px;
+      font-family: Roboto, sans-serif;
+      font-size: large;
+      font-weight: bold;
     }
   </style>
-  <title>Document</title>
+  <title>Google Maps Api</title>
 </head>
 <body>
+
+  <!-- Campo de búsqueda -->
+   <div class="search-container">
+        <input id="search-input" class="search-box" type="text" placeholder="Ingresa la ubicacion">
+   </div>
+  
+
+  <!-- Contenedor del mapa -->
+  <div id="map"></div>
+
+  <!-- Cargar la API de Google Maps -->
   <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0LffCcy9Oak-h5Er-RwDlMNYCZxN9kL4&loading=async&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0LffCcy9Oak-h5Er-RwDlMNYCZxN9kL4&libraries=places&callback=initMap">
   </script>
-  <div id="map">
 
-  </div>
 </body>
-
 </html>
