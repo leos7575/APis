@@ -5,7 +5,7 @@ let autocomplete;
 async function initMap() {
   // Ubicación inicial (Uluru)
   const position = { lat: 21.8141671, lng: -102.7697579 };
-
+  const image = "./img/ciervo.png";
   // Cargar bibliotecas necesarias.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
@@ -19,12 +19,16 @@ async function initMap() {
     mapId: "1",
   });
 
-  // Crear un marcador en la posición inicial
-  marker = new AdvancedMarkerElement({
-    map: map,
-    position: position,
-    title: "Uluru",
-  });
+ // Crear un marcador en la posición inicial
+ const markerElement = document.createElement("div");
+ markerElement.innerHTML = `<img src="${image}" style="width: 40px; height: 40px;" alt="Marker" class="bounce">`;
+
+ marker = new AdvancedMarkerElement({
+   map: map,
+   position: position,
+   content: markerElement,  // Aquí se usa 'content' en lugar de 'icon'
+   title: "Uluru",
+ });
 
   // Inicializar el autocompletado
   const input = document.getElementById("search-input");
