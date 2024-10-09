@@ -19,7 +19,7 @@ async function initMap() {
     mapId: "1",
   });
 
- // Crear un marcador en la posición inicial
+ // Crear un marcador en la posición inicial.
  const markerElement = document.createElement("div");
  markerElement.innerHTML = `<img src="${image}" style="width: 40px; height: 40px;" alt="Marker" class="bounce">`;
 
